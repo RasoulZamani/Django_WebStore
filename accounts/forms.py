@@ -37,6 +37,23 @@ class UserRegisterForm(forms.Form):
     phone    = forms.CharField(max_length=11)
     password = forms.CharField(label='password',widget=forms.PasswordInput)
 
+    def clean_email(self):
+        """checking uniqeness of email"""
+        email = self.cleaned_data['email']
+        user = MyUser.objects.filter(email=email).exists()
+        if user:
+            raise ValidationError("This email is already exists")
+        return email
+    
+    def clean_phone(self):
+        """checking uniqeness of phone"""
+        phone = self.cleaned_data['phone']
+        user = MyUser.objects.filter(phone=phone).exists()
+        if user:
+            raise ValidationError("This phone is already exists")
+        return phone
+        
+        
 class VerifyRegisterCode(forms.Form):
     """user enter recieved code here for verification"""
     code = forms.IntegerField()

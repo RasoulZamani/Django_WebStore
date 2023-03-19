@@ -3,22 +3,23 @@ from django.views import View
 from django.contrib import messages
 from .forms import UserRegisterForm, VerifyRegisterCode
 from .models import OtpCode, MyUser
-from utils import send_top_code
+from utils import send_otp_code
 import random
 
 class UserRegisterView(View):
     """cbv for registering users"""
     class_form = UserRegisterForm
+    template_adrs= 'accounts/register.html'
     
     def get(self, request):
-        return render(request, 'accounts/register.html', {'register_form':self.class_form})
+        return render(request, self.template_adrs, {'register_form':self.class_form})
     
     def post(self, request):
         register_form = self.class_form(request.POST)
         if register_form.is_valid():
             rand_code = random.randint(1000,9999)
             phone = register_form.cleaned_data['phone']
-            send_top_code(phone, rand_code)
+            send_otp_code(phone, rand_code)
             OtpCode.objects.create(phone=phone, code=rand_code)            
             request.session['user_reg_inf'] = {
                 'phone':phone,
@@ -28,7 +29,7 @@ class UserRegisterView(View):
             messages.success(request, 'verification code was sent to {phone}','success')
             return redirect('accounts:user_verify_code')
         
-        return redirect('home:home')
+        return render(request, self.template_adrs,{'register_form':register_form})
     
     
 class UserRegisterVerifyCode(View):
