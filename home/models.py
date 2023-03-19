@@ -9,11 +9,14 @@ class Category(models.Model):
         verbose_name = 'category'
         verbose_name_plural = 'categories'
         
+    def __str__(self) -> str:
+        return self.name
+        
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     slug = models.CharField(max_length=255, unique=True)
-    image = models.ImageField(upload_to='product/')
+    image = models.ImageField(upload_to='product/%Y/%m/%d')#create folders based on date and store uploaded image to them
     description = models.TextField()
     available = models.BooleanField()
     price = models.IntegerField()
