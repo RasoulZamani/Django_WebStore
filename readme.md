@@ -1,6 +1,6 @@
 # Web Store by Django
 
-This repo contains source codes for **web store** written by **django** framework based on ![mongard](www.mongard.ir).
+This repo contains source codes for **web store** written by **django** framework based on [mongard](www.mongard.ir).
 
 
 
