@@ -5,7 +5,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 class UserCreationForm(forms.ModelForm):
     pass1 = forms.CharField(label='password',widget=forms.PasswordInput)
-    pass1 = forms.CharField(label='confirm password',widget=forms.PasswordInput)
+    pass2 = forms.CharField(label='confirm password',widget=forms.PasswordInput)
  
     class Meta:
         model = MyUser
@@ -20,7 +20,7 @@ class UserCreationForm(forms.ModelForm):
     
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.set_password(self.cleaned_dada['pass1'])
+        user.set_password(self.cleaned_data['pass1'])
         if commit:
             user.save()
         return user
