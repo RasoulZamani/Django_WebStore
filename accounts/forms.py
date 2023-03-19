@@ -30,4 +30,14 @@ class UserChangeForm(forms.ModelForm):
     class Meta:
         model = MyUser
         fields = ('email', 'phone', 'password', 'last_login')
-            
+
+
+class UserRegisterForm(forms.Form):
+    email    = forms.EmailField(max_length=255)
+    phone    = forms.CharField(max_length=11)
+    password = forms.CharField(label='password',widget=forms.PasswordInput)
+
+class VerifyRegisterCode(forms.Form):
+    """user enter recieved code here for verification"""
+    code = forms.IntegerField()
+    
