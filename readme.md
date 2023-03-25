@@ -3,7 +3,7 @@
 This repo contains source codes for **web store** written by **django** framework based on [mongard](https://www.mongard.ir).
 
 ## Main Options
-registering users based on phone and verification sms code
+registering users based on phone and verification sms code,login and logout.
 see all products, price and descriptions
 adding product and category 
 

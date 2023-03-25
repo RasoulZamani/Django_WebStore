@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib import messages
-from .forms import UserRegisterForm, VerifyRegisterCode
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.mixins import LoginRequiredMixin 
+from .forms import UserRegisterForm, VerifyRegisterCode, UserLoginForm
 from .models import OtpCode, MyUser
 from utils import send_otp_code
 import random
@@ -50,12 +52,43 @@ class UserRegisterVerifyCode(View):
                                            password=user_session['password']
                 )
                 code_ins.delete()
-                messages.success(request,"code is verified seccessffuly", 'success')
+                messages.success(request, "code is verified seccessffuly", 'success')
                 return redirect('home:home')
             else:
                 messages.error(request, "wrong code!",'danger')
                 return redirect('accounts:user_verify_code')
                 
         return redirect('home:home')
+
+
+class UserLogoutView(LoginRequiredMixin, View):
+    def get(self, request):
+        print("     loggg   outtttt    ")
+        logout(request)
+        messages.success(request, "You loged out seccessfuly", 'success')
+        return redirect('home:home')
+
     
+class UserLoginView(View):
+    class_form = UserLoginForm
+    class_temp = 'accounts/login.html'
     
+    def get(self, request):
+        login_form = self.class_form
+        return render(request, self.class_temp, {'login_form':login_form} )    
+
+    def post(self, request):
+        login_form = self.class_form(request.POST)
+        if login_form.is_valid():
+            data = login_form.cleaned_data
+            user = authenticate(request, phone = data['phone'], password=data['password'])
+            if user:
+                login(request, user)
+                messages.success(request, "You login seccessfuly", 'success')
+                return redirect('home:home')
+            messages.error(request, "phone or pass is wrong", 'warn')
+        return render(request, self.class_temp, {'login_form':login_form} )    
+    
+            
+                
+            
