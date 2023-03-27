@@ -18,5 +18,5 @@ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 dont forget removing it in production phase.
 
-by customizing admin-django command, in account app, we added `remove_expired_otp` for removing expired verification code. 
+by customizing admin-django command, in account app, we added `remove_expired_otp` for removing expired verification code. pytz pakage is uused for handling timezone (also in setting `TIME_ZONE='Asia/Tehran'`) 
 
