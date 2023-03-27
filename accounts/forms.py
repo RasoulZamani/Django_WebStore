@@ -1,5 +1,5 @@
 from django import forms
-from .models import MyUser
+from .models import MyUser, OtpCode
 from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
@@ -51,6 +51,8 @@ class UserRegisterForm(forms.Form):
         user = MyUser.objects.filter(phone=phone).exists()
         if user:
             raise ValidationError("This phone is already exists")
+        # removing previous otp code (if exists)
+        OtpCode.objects.filter(phone=phone).delete()
         return phone
         
         
