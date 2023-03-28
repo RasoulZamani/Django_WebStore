@@ -10,6 +10,10 @@ class Category(models.Model):
         ordering = ('name',)
         verbose_name = 'category'
         verbose_name_plural = 'categories'
+    
+    def get_absolute_url(self):
+        return reverse("home:category_filter", args=[self.slug,])
+    
         
     def __str__(self) -> str:
         return self.name
