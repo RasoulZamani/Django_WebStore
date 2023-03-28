@@ -3,6 +3,9 @@ from django.urls import reverse
 
 
 class Category(models.Model):
+    sub_category = models.ForeignKey('self',on_delete=models.CASCADE, related_name='scategory', null=True, blank=True)
+    is_sub       = models.BooleanField(default=False)
+    
     name = models.CharField(max_length=255)
     slug = models.CharField(max_length=255, unique=True)
     
@@ -19,7 +22,7 @@ class Category(models.Model):
         return self.name
         
 class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ManyToManyField(Category)
     name = models.CharField(max_length=255)
     slug = models.CharField(max_length=255, unique=True)
     image = models.ImageField(upload_to='product/%Y/%m/%d')#create folders based on date and store uploaded image to them

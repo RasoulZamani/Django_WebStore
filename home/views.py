@@ -6,7 +6,7 @@ class HomeView(View):
     """CBV for home"""
     def get(self, request,category_slug=None):
         products = Product.objects.filter(available=True)
-        categories = Category.objects.all()
+        categories = Category.objects.filter(is_sub=False)
         if category_slug:
            category = Category.objects.get(slug=category_slug)
            products = products.filter(category=category) 

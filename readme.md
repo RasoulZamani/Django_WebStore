@@ -4,8 +4,9 @@ This repo contains source codes for **web store** written by **django** framewor
 
 ## Main Options
 registering users based on phone and verification sms code,login and logout.
-see allcategories, products, price and descriptions. by clicking on details you can see more details of each product.
-adding product and category 
+see all categories, products, price and descriptions. by clicking on details you can see more details of each product.
+you can add  product and category and sub category. 
+in home page sub categories can seen in dropdown buttons.
 
 
 ## more implemamtation details
