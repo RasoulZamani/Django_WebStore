@@ -21,3 +21,5 @@ dont forget removing it in production phase.
 
 by customizing admin-django command, in account app, we added `remove_expired_otp` for removing expired verification code. pytz pakage is uused for handling timezone (also in setting `TIME_ZONE='Asia/Tehran'`) 
 
+in navbar you can see total number of selected products near cart button. it was implemented by context proccesor and | length filter. (defining __len__ is used for Cart class)
+
