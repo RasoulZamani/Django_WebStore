@@ -9,4 +9,12 @@
 <p>descroption: {{product.description}}</p>
 <h3>Price: {{product.price}} $ </h3>
 <small>added from: {{product.created}}</small>
+<br></br>
+
+<form action="{%url 'orders:cart_add' product.id %}" method="post">
+    {% csrf_token %}
+    {{ cartadd_form }}
+    <input type='submit' value='add this to cart'>
+</form>
+
 {% endblock %}
