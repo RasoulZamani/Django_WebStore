@@ -11,7 +11,6 @@ I also learned: **Cloud storage** by AbreArvan, **peyment** by Zarinpal, **cache
 
 
 ![detail](pics/detail.PNG)
-<img src="https://github.com/RasoulZamani/Django_WebStore/blob/main/pics/cart.PNG" width="300">
 
 **detail page of one sample product, you can add it to cart.**
 
