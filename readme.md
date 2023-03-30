@@ -3,8 +3,8 @@
 This repo contains source codes for **web store** written by **django** framework based on [mongard](https://www.mongard.ir).
 
 ## Main Options
-registering users based on phone and verification sms code,login and logout.
-see all categories, products, price and descriptions. by clicking on details you can see more details of each product.
+registering users based on phone and verification sms code,(overwiting User Model)
+login and logout and see all categories, products, price and descriptions. By clicking on details you can see more details of each product.
 you can add  product and category and sub category. Also in detail page of each product you can order and then see your final cart (contains products,prices and remove button) 
 in home page sub categories can seen in dropdown buttons.
 
@@ -23,3 +23,6 @@ by customizing admin-django command, in account app, we added `remove_expired_ot
 
 in navbar you can see total number of selected products near cart button. it was implemented by context proccesor and | length filter. (defining __len__ is used for Cart class)
 
+Main focus of this project is on backend featur (not fronend) but we used **Bootstrap** to have more conveninent output. Also thired-party app called **ckeditor** used for styling textfields. 
+
+I also learned (from main course): **Cloud storage** by Abrearvan, **peyment** by zarinpal, **cache** by redis and connecting to **Postgresql** but not implemented in this repo.

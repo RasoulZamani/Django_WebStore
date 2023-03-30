@@ -6,7 +6,7 @@
 {% block content %}
 <h2>name : {{product.name}}</h2>
 <img src="{{product.image.url}}" >
-<p>descroption: {{product.description}}</p>
+<p>descroption: {{  product.description |  safe  }}</p>
 <h3>Price: {{product.price}} $ </h3>
 <small>added from: {{product.created}}</small>
 <br></br>
