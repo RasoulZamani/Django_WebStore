@@ -8,7 +8,7 @@ This repo contains source codes for **web store** written by **django** framewor
 **home page of web store contains products and navbar.**
 
 
-<center>![detail](pics/detail.PNG)<center>
+![detail](pics/detail.PNG)
 
 **detail page of one sample product, you can add it to cart.**
 
