@@ -1,11 +1,13 @@
 # Web Store by Django
 
 This repo contains source codes for **web store** written by **django** framework based on [mongard](https://www.mongard.ir).
+I also learned: **Cloud storage** by AbreArvan, **peyment** by Zarinpal, **cache** by redis and connecting to **Postgresql** but not implemented in this repo.
 
 
 ![home page](pics/home.PNG)
 
 **home page of web store contains products and navbar.**
+
 
 
 ![detail](pics/detail.PNG)
@@ -40,4 +42,35 @@ in navbar you can see total number of selected products near cart button. it was
 
 Main focus of this project is on backend featur (not fronend) but we used **Bootstrap** to have more conveninent output. Also thired-party app called **ckeditor** used for styling textfields. 
 
-I also learned (from main course): **Cloud storage** by Abrearvan, **peyment** by zarinpal, **cache** by redis and connecting to **Postgresql** but not implemented in this repo.
+_________________________________________________________________________
+## Requrements
+it is recomended to use venv and then pip install -r requirements.txt
+```
+amqp==5.1.1
+asgiref==3.6.0
+billiard==3.6.4.0
+celery==5.2.7
+click==8.1.3
+click-didyoumean==0.3.0
+click-plugins==1.1.1
+click-repl==0.2.0
+colorama==0.4.6
+cron-descriptor==1.2.35
+Django==4.1.7
+django-celery-beat==2.5.0
+django-ckeditor==6.5.1
+django-js-asset==2.0.0
+django-timezone-field==5.0
+kombu==5.2.4
+Pillow==9.4.0
+prompt-toolkit==3.0.38
+python-crontab==2.7.1
+python-dateutil==2.8.2
+pytz==2023.2
+six==1.16.0
+sqlparse==0.4.3
+tzdata==2022.7
+vine==5.0.0
+wcwidth==0.2.6
+
+```
