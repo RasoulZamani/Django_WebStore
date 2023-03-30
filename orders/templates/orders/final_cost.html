@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block title %} FinalCost {% endblock %}
+
+
+{% block content %}
+<h2> Final cost of your order for payment:</h2>
+<h1>{{ order.get_total_cost}} $</h1>
+
+
+{% endblock %}
