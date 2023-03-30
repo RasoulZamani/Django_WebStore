@@ -4,7 +4,12 @@ This repo contains source codes for **web store** written by **django** framewor
 
 
 ![home page](pics/home.PNG)
+home page of web store contains products and navbar.
+
+
 ![detail](pics/detail.PNG)
+detail page of one sample product, you can add it to cart.
+
 
 ## Main Options
 registering users based on phone and verification sms code,(overwiting User Model)
@@ -12,8 +17,11 @@ login and logout and see all categories, products, price and descriptions. By cl
 you can add  product and category and sub category. Also in detail page of each product you can order and then see your final cart (contains products,prices and remove button) 
 in home page sub categories can seen in dropdown buttons.
 
+
 ![cart](pics/cart.PNG)
-## more implemamtation details
+cart contains products, quantity and price.
+
+## some implemamtation details
 
 in this project we completly have custtemized User admin pannels, for example verification for user is based on  phone number instead of username, and number will be verificated by code that messaged to phone.
 if your products are a few, you can load image directly to app.
