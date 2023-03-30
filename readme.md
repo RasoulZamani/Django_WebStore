@@ -2,13 +2,17 @@
 
 This repo contains source codes for **web store** written by **django** framework based on [mongard](https://www.mongard.ir).
 
+
+![home page](pics/home.PNG)
+![detail](pics/detail.PNG)
+
 ## Main Options
 registering users based on phone and verification sms code,(overwiting User Model)
 login and logout and see all categories, products, price and descriptions. By clicking on details you can see more details of each product.
 you can add  product and category and sub category. Also in detail page of each product you can order and then see your final cart (contains products,prices and remove button) 
 in home page sub categories can seen in dropdown buttons.
 
-
+![cart](pics/cart.PNG)
 ## more implemamtation details
 
 in this project we completly have custtemized User admin pannels, for example verification for user is based on  phone number instead of username, and number will be verificated by code that messaged to phone.
