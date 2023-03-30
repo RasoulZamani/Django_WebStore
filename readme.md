@@ -4,11 +4,13 @@ This repo contains source codes for **web store** written by **django** framewor
 
 
 ![home page](pics/home.PNG)
-home page of web store contains products and navbar.
+
+**home page of web store contains products and navbar.**
 
 
-![detail](pics/detail.PNG)
-detail page of one sample product, you can add it to cart.
+<center>![detail](pics/detail.PNG)<center>
+
+**detail page of one sample product, you can add it to cart.**
 
 
 ## Main Options
@@ -19,7 +21,8 @@ in home page sub categories can seen in dropdown buttons.
 
 
 ![cart](pics/cart.PNG)
-cart contains products, quantity and price.
+
+**cart contains products, quantity and price.**
 
 ## some implemamtation details
 
